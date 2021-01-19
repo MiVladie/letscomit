@@ -1,0 +1,137 @@
+$black: #151515;
+
+.BlockLarge {
+    width: 100%;
+
+    .Text {
+        width: 90%;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        
+        padding: 2em 0 0.5em;
+
+        .Intro, .Main, .Description {
+            font-weight: 500;
+            color: $black;
+
+            margin-bottom: 0.25em;
+        }
+
+        .Intro {
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+
+        .Main {
+            font-size: 2.2em;
+        }
+
+        .Description {
+            font-size: 1em;
+            font-weight: 400;
+            line-height: 1.2em;
+        }
+
+        .Learn {
+            display: block;
+            margin: 1em 0 0.5em;
+            font-size: 1.2em;
+            outline: none;
+        }
+    }
+
+    .Images {
+        width: 100%;
+        height: 40vh;
+
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+
+        .BackgroundImage, .ForegroundImage {
+            background-position: center;
+            background-repeat: no-repeat;
+
+            object-fit: cover;
+        }
+
+        .BackgroundImage {
+            background-image: none;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        .ForegroundImage {
+            background-image: none;
+
+            position: absolute;
+
+            max-height: 90%;
+            max-width: 90%;
+        }
+    }
+}
+
+@media(min-width: 720px) {
+    .BlockLarge {
+        padding: 3em 0;
+        
+        .Text {
+            font-size: 1.1em;
+            margin: 0;
+
+            margin: 0 auto 2em;
+            width: 80%;
+
+            text-align: center;
+            
+            .Intro, .Main, .Description, .Learn {
+                margin-bottom: 0.35em;
+            }
+        }
+
+        .Images {    
+            width: 95%;
+
+            .ForegroundImage {
+                max-height: 75%;
+                max-width: 75%;                
+            }
+        }
+    }
+}
+
+@media(min-width: 1025px) {
+    .BlockLarge {
+        padding: 4em 0;
+
+        .Text {
+            font-size: 1.35em;
+            width: 65%;
+
+            .Intro {
+                font-size: 1em;
+            }
+
+            .Main {
+                font-size: 3em;
+            }
+
+            .Description {
+                font-size: 1em;
+                font-weight: 500;
+                margin: 0 auto;
+            }
+        }
+
+        .Images {
+            width: 85%;
+            height: 80vh;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+$black: #151515;
+
+.IntroSmall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    padding: 2em;
+
+    .Main, .Description {
+        font-family: 'Poppins', sans-serif;
+        color: $black;
+
+        text-align: center;
+    }
+
+    .Main {
+        font-weight: 600;
+        font-size: 1.75em;
+
+        text-transform: capitalize;
+
+        margin-bottom: 0.5em;
+    }
+
+    .Description {
+        font-size: 1em; 
+        font-weight: 300;
+        line-height: 1.25em;     
+    }
+}
+
+@media (min-width: 720px) {
+    .IntroSmall {
+        font-size: 1.2em;
+
+        padding: 2.75em 0;
+
+        .Main, .Description {
+            width: 75%;
+        }
+
+        .Main {
+            margin-bottom: 0.75em;
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    .IntroSmall {
+        font-size: 1.5em;
+
+        padding: 3em 0;
+
+        .Main, .Description {
+            width: 50%;
+        }
+
+        .Main {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+    }
+}

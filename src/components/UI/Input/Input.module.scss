@@ -1,0 +1,41 @@
+$black: #151515;
+$red: #FF2C2C;
+
+.Input {
+    width: 100%;
+
+    margin-bottom: 0.75em;
+    
+    .InputField, .Textarea {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.125em;
+        font-weight: 300;
+        color: $black;
+
+        width: calc(100% - 10px);
+
+        padding-left: 10px;
+
+        border: 1px solid rgba(0, 0, 0, 0.25); 
+    }
+
+    .InputField {
+        height: 3em;           
+    }
+
+    .Textarea {
+        height: 10em;
+        resize: none;
+    }
+
+    .Error {
+        border: 1px solid $red;
+    }
+
+    .ErrorMessage {
+        font-size: 0.85em;
+        color: $red;
+        
+        margin-top: 0.25em;
+    }
+}

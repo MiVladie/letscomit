@@ -1,0 +1,165 @@
+.BlockMedium {    
+    width: 100%;
+
+    .Text {
+        width: 90%;
+        min-height: 25vh;
+        
+        margin-bottom: 1em;
+        margin-left: 1em;
+        padding: 2em 0 0.5em;
+
+        .Main, .Description {
+            font-weight: 500;
+            margin-bottom: 0.5em;
+        }
+
+        .Main {
+            font-size: 2.2em;
+        }
+
+        .Description {
+            font-size: 1em;
+            font-weight: 400;
+
+            line-height: 1.2em;
+        }
+
+        .Learn {
+            display: block;
+            margin: 1em 0;
+            font-size: 1.2em;
+
+            transition: all 0.15s;
+            outline: none;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .Images {
+        width: 100%;
+        height: 50vh;
+
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+
+        .BackgroundImage, .ForegroundImage {
+            background-position: center;
+            background-repeat: no-repeat;
+
+            object-fit: cover;
+        }
+
+        .BackgroundImage {
+            background-image: none;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        .ForegroundImage {
+            background-image: none;
+
+            position: absolute;
+
+            max-height: 90%;
+            max-width: 90%;
+        }
+    }
+}
+
+@media(min-width: 720px) {
+    .BlockMedium {
+        min-height: 30vh;
+
+        display: flex;
+        flex-flow: row;
+        position: relative;
+
+        .Text, .Images {
+            width: 50%;
+        }
+
+        .Text {
+            font-size: 1.1em;
+
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+
+            .Main, .Description, .Learn {
+                width: 85%;
+                height: 45%;
+
+                padding-left: 1.25rem;
+            }
+
+            .Main {
+                padding-top: 1em;
+                padding-bottom: 1em;
+            }
+    
+            .Description {            
+                display: flex;
+                align-items: flex-end;
+
+                margin: 0;
+                padding-bottom: 1em;
+            }            
+        }
+
+        .Images {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+
+            width: 50%;
+            height: auto;
+            
+            .BackgroundImage {
+                height: 100%;
+            }
+        }               
+    }
+}
+
+@media(min-width: 1025px) {
+    .BlockMedium {
+        min-height: 65vh;
+
+        .Text {
+            font-size: 1.35em;
+            
+            .Main, .Description {
+                width: 80%;
+            }
+            
+            .Main {
+                font-size: 3em;
+                padding-bottom: 2em;
+            }
+
+            .Description {
+                font-size: 1em;
+                font-weight: 500;
+            }
+            
+            .Learn {
+                margin: 0.5em 0 1em 0;
+            }
+        }
+
+    }
+}
+

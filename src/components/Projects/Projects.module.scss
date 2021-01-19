@@ -1,0 +1,184 @@
+$black: #151515;
+
+.Projects {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-wrap: wrap;
+
+    padding: 1em 0;
+
+    .Project {
+        width: 80%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+
+        margin-bottom: 2em;
+
+        transition: all 0.5s;
+
+        .Name, .Description {
+            text-align: center;
+            color: $black;
+        }
+
+        .Name {
+            font-family: 'Staatliches', cursive;
+            font-size: 1.25em;
+            font-weight: 500;
+
+            text-transform: uppercase;
+        }
+
+        .Container {
+            width: 100%;
+
+            border: 0.5px solid rgba(0, 0, 0, 0.25);
+            border-radius: 4px;
+
+            margin: 0.5em 0;
+
+            overflow: hidden;
+
+            .Bar {
+                display: flex;
+                align-content: center;
+                border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+
+                .Nav {
+                    width: 5px;
+                    height: 5px;
+
+                    margin: 0.25em 0.25em 0.25em 0;
+
+                    border: 0.5px solid rgba(0, 0, 0, 0.35);
+                    border-radius: 70%;
+
+                    &:nth-child(1) {
+                        margin-left: 0.5em;
+                    }
+                }
+            }
+
+            .Content {
+                width: 100%;
+
+                background-color: #DBE2FF;
+
+                position: relative;
+
+                /*&:hover {
+                    .View {
+                        display: flex;
+                    }
+                }*/
+
+                img {
+                    width: 100%;
+
+                    object-fit: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+ 
+                .View {
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    
+                    transition: all 0.2s;
+
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.2);
+
+                        a {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                    
+                    a {
+                        opacity: 0;
+                        transform: translateY(2em);                            
+
+                        font-size: 1em;
+                        text-decoration: none;
+                        color: $black;
+                        background-color: white;
+
+                        margin-bottom: 10px;
+                        padding: 0.75em 1.75em;
+
+                        transition: all 0.2s;
+
+                        &:hover {
+                            background-color: #e4e4e4;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .Description {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85em;
+            font-weight: 300;
+
+            width: 95%;
+            line-height: 1.25em;
+        }
+    }
+}
+
+@media (min-width: 720px) {
+    .Projects {
+        .Project {
+            width: 35%;
+            margin: calc((50% - 35%) / 4 );
+
+            .Name {
+                font-size: 1.5em;
+            }
+
+            .Container {
+                .Bar {
+                    .Nav {
+                        width: 7px;
+                        height: 7px;
+                    }
+                }
+            }
+
+            .Description {
+                font-size: 1em;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .Projects {
+        .Project {
+            .Name {
+                font-size: 2em;
+            }
+            
+            .Description {
+                font-size: 1.25em;
+            }
+        }
+    }
+}

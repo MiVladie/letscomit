@@ -1,0 +1,382 @@
+$black: #151515;
+$red: #FF2C2C;
+
+.Navigation {
+    width: 90%;
+    height: 5em;
+
+    margin: 0 auto;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .Brand {
+        text-decoration: none;
+        outline: none;
+
+        h1 {
+            font-family: 'Righteous', cursive;
+            font-size: 2em;
+            color: $black;
+
+            span {
+                color: $red;
+            }
+        }
+    }
+
+    .Menu {
+        width: 3em;
+        height: 3em;
+
+        background: none;
+        background-image: url('../../assets/icons/menu.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        border: none;
+        transform: scale(0.7);
+        filter: brightness(0.15);
+
+        outline: none;
+    }
+    
+    .Links, .Contact {
+        display: none;
+    }
+}
+
+.Scrolled {
+    background-color: white;
+    
+    padding: 0 5vw;
+    height: 5em;
+
+    animation: appear 0.2s 0s ease forwards;
+}
+
+.Expand {
+    padding: 0 5vw;
+    
+    .Brand, .Menu {
+        z-index: 300;
+    }
+
+    .Menu {
+        background: none;
+        background-image: url('../../assets/icons/close.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        border: none;
+        transform: scale(0.5);
+
+        outline: none;
+    }
+    
+    .Links {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        z-index: 200;
+
+        width: 100vw;
+        height: 100vh;
+        
+        background-color: white;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+
+        overflow: hidden;
+
+        animation: fadeIn 0.3s 0s ease forwards;
+
+        .Link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-flow: column;
+
+            margin: 0 2.5em;
+
+            .Text {
+                margin: 0.65em 0;
+                padding: 0.35em 0;
+
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.5em;
+                font-weight: 500;
+                
+                text-transform: uppercase;
+                text-decoration: none;
+                
+                color: $black;
+
+                outline: none;
+
+                transition: all 0.15s;
+
+                z-index: 400;
+            }                
+        }
+        
+        .Active {
+            position: relative;
+
+            .Text {
+                color: white;
+            }
+
+            .About, .Projects, .Services {
+                position: absolute;
+
+                height: 4em;
+                width: 10em;
+
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            .About {
+                background-image: url('../../assets/icons/about-selected.png');
+            }
+            
+            .Projects {
+                background-image: url('../../assets/icons/projects-selected.png');
+            }
+            
+            .Services {
+                background-image: url('../../assets/icons/services-selected.png');
+            }
+        }
+    }
+    
+    .Contact {
+        position: fixed;
+        bottom: 2em;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        z-index: 300;
+
+        display: block;
+
+        padding: 0.75em 1.5em;
+        border: 1.5px solid $black;
+        
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+
+        text-transform: uppercase;
+        text-decoration: none;
+
+        color: $black;
+
+        transition: all 0.15s;
+        outline: none;
+
+        animation: fadeInContact 0.3s 0s ease forwards;
+    }
+}
+
+@keyframes fadeInContact {
+    from {
+        opacity: 0;
+        bottom: 50vh;
+    }
+
+    to {
+        opacity: 1;
+        bottom: 2vh;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        height: 50vh;
+    }
+
+    to {
+        opacity: 1;
+        height: 100vh;
+    }            
+}
+
+@keyframes appear {
+    from {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0);
+        height: 5em;
+    }
+
+    to {            
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        height: 4em;
+    }            
+}
+
+@media(min-width: 720px) {
+    .Expand {
+        .Links {
+            font-size: 1.25em;
+        }
+
+        .Contact {
+            font-size: 1.25em;
+            outline: none;
+        }
+    }
+
+    .Navigation {
+        height: 7em;
+    }
+        
+    .Scrolled {
+        height: 7em;
+        animation: appear 0.3s 0s ease forwards;
+    }
+
+    @keyframes appear {
+        from {
+            background-color: rgba(255, 255, 255, 0);
+            height: 7em;
+        }
+
+        to {
+            background-color: rgba(255, 255, 255, 1);
+            height: 5.5em;
+        }            
+    }
+}
+
+@media (orientation: landscape) {
+    .Expand {
+        .Contact {
+            display: none;
+        }
+    }
+}
+
+
+@media(min-width: 1025px) {
+    .Navigation {
+        width: 93%;
+
+        .Menu {
+            display: none;
+        }
+
+        .Links {
+            display: block;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+      
+            .Link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                flex-flow: column;
+
+                margin: 0 2.5em;
+
+                .Text {
+                    padding: 0.75em 0;
+
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 1em;
+                    font-weight: 500;
+                    
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    
+                    color: $black;
+
+                    outline: none;
+
+                    transition: all 0.15s;
+                }
+            }
+                
+            .Active {
+                position: relative;
+    
+                .Text {
+                    color: white;
+                    z-index: 400;
+                }
+    
+                .About, .Projects, .Services {
+                    position: absolute;
+    
+                    height: 4em;
+                    width: 8em;
+    
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+    
+                .About {
+                    background-image: url('../../assets/icons/about-selected.png');
+                }
+                
+                .Projects {
+                    background-image: url('../../assets/icons/projects-selected.png');
+                }
+                
+                .Services {
+                    background-image: url('../../assets/icons/services-selected.png');
+                }
+            }
+        }
+
+        .Contact {
+            display: block;
+
+            padding: 0.85em 1.5em;
+            border: 1.5px solid $black;
+            
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9em;
+            font-weight: 500;
+
+            text-transform: uppercase;
+            text-decoration: none;
+
+            color: $black;
+
+            transition: all 0.15s;
+            outline: none;
+            
+            &:hover {
+                background-color: $black;
+                color: white;
+            }
+        }
+    }
+    
+    .Scrolled {
+        padding: 0 calc(3.5%);
+    }
+}

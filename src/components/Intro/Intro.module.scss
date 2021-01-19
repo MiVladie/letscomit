@@ -1,0 +1,70 @@
+$black: #151515;
+
+.Intro {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-flow: column;
+
+    padding: 2em 0;
+
+    .Line {
+        margin: 0.75em 0 1.5em;
+    }
+
+    .Main, .Description {
+        text-align: center;
+        color: $black;
+
+        width: 90%;
+    }
+
+    .Main {
+        font-family: 'Staatliches', cursive;
+        font-size: 1.5em;
+    }
+
+    .Description {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1em;
+        font-weight: 300;
+
+        line-height: 1.35em;
+    }
+}
+
+@media (min-width: 720px) {
+    .Intro {
+        font-size: 1.2em;
+
+        padding: 3em 0;
+
+        .Main, .Description {
+            width: 75%;
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    .Intro {
+        font-size: 1.5em;
+
+        padding: 2.5em 0;
+
+        .Line {
+            margin: 1em 0 2.5em;
+        }
+
+        .Main, .Description {
+            width: 45%;
+            line-height: 1.5em;
+        }
+        
+        .Main {
+            font-size: 2em;
+        }
+    }
+}

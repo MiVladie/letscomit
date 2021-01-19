@@ -1,0 +1,31 @@
+.Animation {
+    animation: fadeIn 1s 0s ease forwards;
+
+    display: inherit;
+    position: inherit;
+
+    width: inherit;
+    height: inherit;
+
+    margin: inherit;
+
+    justify-content: inherit;
+    align-items: inherit;
+    flex-flow: inherit;
+}
+
+.Hide {
+    visibility: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(2em);
+        opacity: 0;
+    }
+
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,92 @@
+$black: #151515;
+
+.Columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    padding: 1em 0;
+
+    .Column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+
+        width: 95%;
+
+        margin-bottom: 2.5em;
+
+        .Line {
+            margin: 0.75em 0 1.5em;
+        }
+
+        .Main, .Description {
+            text-align: center;
+        }
+
+        .Main {
+            font-size: 1.75em;
+            font-weight: 600;
+            
+            text-transform: uppercase;
+
+            color: $black;
+        }
+
+        .Description {
+            font-size: 1em;
+            line-height: 1.25em;
+            font-weight: 300;
+            text-align: center;
+        }
+    }
+}
+
+@media (min-width: 720px) {
+    .Columns {
+        flex-flow: row;
+        align-items: flex-start;
+        padding: 1em 0 2em;
+
+        .Column {
+            max-width: 30%;
+            margin: 0 1em;
+
+            font-size: 0.8em;
+
+            .Line {
+                margin: 1.25em 0 2em;
+            }
+
+            .Description {
+                font-size: 1.2em;
+                line-height: 1.5em;
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    .Columns {
+        flex-flow: row;
+
+        padding: 1em 0 5em;
+
+        .Column {
+            max-width: 25%;
+            margin: 0 4em;
+
+            font-size: 1em;
+
+            .Line {
+                margin: 1.5em 0 2.5em;
+            }
+
+            .Description {
+                font-size: 1.125em;
+            }
+        }
+    }
+}

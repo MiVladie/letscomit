@@ -1,0 +1,46 @@
+.Square {
+    position: absolute;
+
+    border: 0.8em solid white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
+    width: 18em;
+    height: 18em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: appear 0.9s 0.15s ease-out forwards;
+    opacity: 0;
+
+    .Promo {
+        font-size: 4.5em;
+        font-family: 'Staatliches', cursive;
+
+        text-transform: uppercase;
+        text-align: center;
+
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+        
+        color: white;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(3.5em);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 720px) {
+    .Square {
+        font-size: 1.25em;
+    }
+}

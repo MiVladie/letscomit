@@ -1,0 +1,54 @@
+$black: #151515;
+
+.IntroLarge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-flow: column;
+
+    width: 85%;
+    margin: 0 auto;
+    padding: 2em 0;
+
+    .Main {
+        font-family: 'Staatliches', cursive;
+        font-size: 2.5em;
+        color: $black;
+        text-align: center;
+    }
+
+    .Line {
+        margin: 1em 0;
+    }
+}
+
+@media (min-width: 720px) {
+    .IntroLarge {
+        width: 75%;
+        padding: 3em 0;
+
+        .Main {
+            font-size: 3.5em;
+        }
+
+        .Line {
+            margin: 1.5em 0 2em;
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    .IntroLarge {
+        width: 60%;
+        padding: 4em 0;
+        
+        .Main {
+            font-size: 5em;
+        }
+
+        .Line {
+            margin: 2em 0 3em;
+        }
+    }
+}

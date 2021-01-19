@@ -1,0 +1,75 @@
+$black: #151515;
+$red: #FF2C2C;
+
+.Discuss {
+    width: 100%;
+    
+    background-color: #F2F2F2;
+
+    padding: 2em 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-flow: column;
+
+    .Text {
+        font-family: 'Staatliches', cursive;
+        font-size: 1.65em;
+
+        text-transform: uppercase;
+        text-align: center;
+
+        color: $black;
+
+        margin-bottom: 0.75em;
+    }
+
+    .Button {
+        padding: 0.75em 1.75em;
+
+        background-color: $red;
+        border-radius: 2px;
+
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85em;
+        font-weight: 500;
+
+        text-transform: uppercase;
+        text-decoration: none;
+
+        color: white;
+    }
+}
+
+@media(min-width: 720px) {
+    .Discuss {
+        font-size: 1.5em;
+        padding: 2.5em 0;
+
+        .Text {
+            margin-bottom: 0.75em;
+        }
+
+        .Button {
+            font-size: 0.85em;
+        }
+    }
+}
+
+@media(min-width: 1025px) {
+    .Discuss {
+        padding: 3.5em 0;
+
+        .Text {
+            font-size: 2.2em;
+            margin-bottom: 0.8em;
+        }
+
+        .Button {
+            font-size: 0.9em;
+            padding: 0.75em 2em;
+        }
+    }
+}
