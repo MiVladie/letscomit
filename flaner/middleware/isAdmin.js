@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const { JWT_SECRET } = require('../config/constants');
+const Constants = require('../config/constants');
 
 module.exports = (req, _, next) => {
 	const authHeader = req.get('Authorization');
@@ -14,7 +14,7 @@ module.exports = (req, _, next) => {
 	let decodedToken;
 
 	try {
-		decodedToken = jwt.verify(token, JWT_SECRET);
+		decodedToken = jwt.verify(token, Constants.JWT_SECRET);
 	} catch (error) {
 		return next(error);
 	}

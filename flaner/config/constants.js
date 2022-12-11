@@ -1,3 +1,5 @@
-export const JWT_SECRET = '';
-export const DATABASE_URL = '';
-export const SEND_GRID_API_KEY = '';
+module.exports = {
+	JWT_SECRET: '',
+	DATABASE_URL: '',
+	SEND_GRID_API_KEY: ''
+};

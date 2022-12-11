@@ -2,12 +2,12 @@ const axios = require('axios');
 const nodemailer = require('nodemailer');
 const sendgridTransport = require('nodemailer-sendgrid-transport');
 
-const { DATABASE_URL } = require('../config/constants');
+const Constants = require('../config/constants');
 
 const transporter = nodemailer.createTransport(
 	sendgridTransport({
 		auth: {
-			api_key: SEND_GRID_API_KEY
+			api_key: Constants.SEND_GRID_API_KEY
 		}
 	})
 );
@@ -17,10 +17,10 @@ exports.getSchedule = async (req, res, next) => {
 	const serviceIds = req.query.id.split(',');
 
 	try {
-		const services = await axios.get(DATABASE_URL + client + '/services.json');
-		const timetable = await axios.get(DATABASE_URL + client + '/timetable.json');
-		const allAppointments = await axios.get(DATABASE_URL + client + '/appointments.json');
-		const queue = await axios.get(DATABASE_URL + client + '/queue.json');
+		const services = await axios.get(Constants.DATABASE_URL + client + '/services.json');
+		const timetable = await axios.get(Constants.DATABASE_URL + client + '/timetable.json');
+		const allAppointments = await axios.get(Constants.DATABASE_URL + client + '/appointments.json');
+		const queue = await axios.get(Constants.DATABASE_URL + client + '/queue.json');
 
 		let totalDuration = 0;
 
@@ -100,7 +100,7 @@ exports.postPaymentCard = async (req, res, next) => {
 		await checkAppointmentAvailability(client, appointment);
 
 		// Connecting to the client
-		const credentials = await axios.get(DATABASE_URL + client + '/credentials.json');
+		const credentials = await axios.get(Constants.DATABASE_URL + client + '/credentials.json');
 
 		const stripe = require('stripe')(credentials.data.stripeSecretKey);
 
@@ -225,7 +225,7 @@ const getAppointmentDetails = async (appointment, type, client) => {
 	let totalDuration = 0;
 
 	try {
-		const services = await axios.get(DATABASE_URL + client + '/services.json');
+		const services = await axios.get(Constants.DATABASE_URL + client + '/services.json');
 
 		for (service of appointment.service.id) {
 			let foundService = services.data.find((s) => s.id === +service);
@@ -285,8 +285,8 @@ const checkAppointmentAvailability = async (client, appointment, postQueue) => {
 			throw error;
 		}
 
-		const allAppointments = await axios.get(DATABASE_URL + client + '/appointments.json');
-		const queue = await axios.get(DATABASE_URL + client + '/queue.json');
+		const allAppointments = await axios.get(Constants.DATABASE_URL + client + '/appointments.json');
+		const queue = await axios.get(Constants.DATABASE_URL + client + '/queue.json');
 
 		if (queue.data == null) {
 			queue.data = [];
@@ -348,7 +348,7 @@ const checkAppointmentAvailability = async (client, appointment, postQueue) => {
 
 const postAppointmentToQueue = async (client, appointment) => {
 	try {
-		await axios.post(DATABASE_URL + client + '/queue.json', appointment);
+		await axios.post(Constants.DATABASE_URL + client + '/queue.json', appointment);
 	} catch (error) {
 		throw new Error(error);
 	}
@@ -358,7 +358,7 @@ const postAppointmentToDB = async (client, appointment) => {
 	appointment.details.bookingTime = new Date();
 
 	try {
-		await axios.post(DATABASE_URL + client + '/appointments.json', appointment);
+		await axios.post(Constants.DATABASE_URL + client + '/appointments.json', appointment);
 	} catch (error) {
 		throw new Error(error);
 	}

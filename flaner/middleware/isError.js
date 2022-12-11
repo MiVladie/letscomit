@@ -1,4 +1,4 @@
-module.exports = (error, _, res, _) => {
+module.exports = (error, _, res) => {
 	console.log(error);
 
 	const status = error.statusCode || 500;
