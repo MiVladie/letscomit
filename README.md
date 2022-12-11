@@ -3,7 +3,7 @@
 Official repository for Letscomit website.
 
 Website preview:
-https://letscomit.com/
+http://mivladie.github.io/letscomit/
 
 # :memo: Table of Contents
 
