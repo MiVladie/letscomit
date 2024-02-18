@@ -1,4 +1,6 @@
 const express = require('express');
+const functions = require('firebase-functions');
+
 const bodyParser = require('body-parser');
 
 const isError = require('./middleware/isError');
@@ -20,4 +22,4 @@ app.use('/appointment', appointmentRoutes);
 
 app.use(isError);
 
-app.listen(process.env.PORT || 8080);
+exports.app = functions.https.onRequest(app);
